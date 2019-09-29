@@ -93,22 +93,37 @@
     </dependencies>
     <build>
         <outputDirectory>F:/test/</outputDirectory>
-        <resources>
-            <resource>
-                <directory>${project.basedir}</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                    <exclude>test-output/</exclude>
-                    <exclude>pom.xml</exclude>
-                    <exclude>target/</exclude>
-                    <exclude>*.iml</exclude>
-                    <exclude>.idea/</exclude>
-                </excludes>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
             <plugins>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <executions>
+                        <execution>
+                            <id>copy-resources</id>
+                            <!-- here the phase you need -->
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>F:/test/</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.basedir}</directory>
+                                        <excludes>
+                                            <exclude>**/*.java</exclude>
+                                            <exclude>test-output/</exclude>
+                                            <exclude>pom.xml</exclude>
+                                            <exclude>target/</exclude>
+                                            <exclude>*.iml</exclude>
+                                            <exclude>.idea/</exclude>
+                                        </excludes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
                 <!-- 打包插件   -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
