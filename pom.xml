@@ -92,6 +92,7 @@
 
     </dependencies>
     <build>
+
         <outputDirectory>F:/test/</outputDirectory>
         <resources>
             <resource>
@@ -115,6 +116,7 @@
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.6</version>
                     <configuration>
+                        <outputDirectory>F:/test/</outputDirectory>
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
