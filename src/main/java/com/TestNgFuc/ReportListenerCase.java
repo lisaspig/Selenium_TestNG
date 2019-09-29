@@ -33,10 +33,10 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 public class ReportListenerCase implements IReporter {
     static SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     static String dataNow=format.format(new Date());
-    static SimpleDateFormat format1=new SimpleDateFormat("yyyyMMddHHmmss");
-    static String dataNow1=format1.format(new Date());
+//    static SimpleDateFormat format1=new SimpleDateFormat("yyyyMMddHHmmss");
+//    static String dataNow1=format1.format(new Date());
     private static final String OUTPUT_FOLDER = "test-output/Extentreports/";
-    private static final String FILE_NAME = "测试报告"+dataNow1+".html";
+    private static final String FILE_NAME = "Swap测试报告.html";
     private ExtentReports extent;
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
