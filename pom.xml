@@ -92,7 +92,6 @@
 
     </dependencies>
     <build>
-
         <outputDirectory>F:/test/</outputDirectory>
         <resources>
             <resource>
