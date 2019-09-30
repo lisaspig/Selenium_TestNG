@@ -36,7 +36,7 @@ public class ReportListenerCase implements IReporter {
 //    static SimpleDateFormat format1=new SimpleDateFormat("yyyyMMddHHmmss");
 //    static String dataNow1=format1.format(new Date());
     private static final String OUTPUT_FOLDER = "test-output/Extentreports/";
-    private static final String FILE_NAME = "Swap测试报告.html";
+    private static final String FILE_NAME = "SwapTestReport.html";
     private ExtentReports extent;
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
