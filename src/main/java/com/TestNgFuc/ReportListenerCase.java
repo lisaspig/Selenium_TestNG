@@ -131,8 +131,8 @@ public class ReportListenerCase implements IReporter {
         //怎么样解决cdn.rawgit.com访问不了的情况
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
         htmlReporter.config().setEncoding("GBK");
-        htmlReporter.config().setDocumentTitle("自动化测试报告");
-        htmlReporter.config().setReportName("自动化测试报告");
+        htmlReporter.config().setDocumentTitle("TestReport");
+        htmlReporter.config().setReportName("TestReport");
 //        htmlReporter.config().setChartVisibilityOnOpen(true);
 //        htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);
