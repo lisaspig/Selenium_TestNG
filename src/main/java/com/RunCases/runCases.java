@@ -21,31 +21,30 @@ import java.util.Map;
 
 public class runCases {
 
+    private static String userdir = System.getProperty("user.dir");
+    private static String foxdriverpath =userdir+"\\Webdriver\\geckodriver.exe";
+    private static String chormriverpath = userdir+"\\Webdriver\\chromedriver.exe";
+    private static String firstpageJsonPath =userdir+"\\Jsonfiles\\FirstPageEle.json";
+    private static String congfigJsonpath = userdir+"\\Jsonfiles\\config.json";
+    private static String JiBenCZ_Ele="JiBenCZ_Ele";
+    private static String AddL2_Ele="AddL2_Ele";
+    private static String Band_Ele="Band_Ele";
+    private static String L2Select_Ele="AddL2_Select_values";
 
-        public static String userdir = System.getProperty("user.dir");
-        public static String foxdriverpath =userdir+"\\Webdriver\\geckodriver.exe";
-        public static String chormriverpath = userdir+"\\Webdriver\\chromedriver.exe";
-        public static String firstpageJsonPath =userdir+"\\Jsonfiles\\FirstPageEle.json";
-        public static String congfigJsonpath = userdir+"\\Jsonfiles\\config.json";
-        public static String JiBenCZ_Ele="JiBenCZ_Ele";
-        public static String AddL2_Ele="AddL2_Ele";
-        public static String Band_Ele="Band_Ele";
-        public static String L2Select_Ele="AddL2_Select_values";
 
+    private Map<String, Object> config_Map=null;
+    private Map<String, Object> JiBenCZ_Map =null;
+    private Map<String, Object> L2_Map =null;
+    private Map<String, Object> Band_Map=null;
+    private Map<String, Object> L2Select_Map =null;
 
-        Map<String, Object> config_Map=null;
-        Map<String, Object> JiBenCZ_Map =null;
-        Map<String, Object> L2_Map =null;
-        Map<String, Object> Band_Map=null;
-        Map<String, Object> L2Select_Map =null;
-
-        WebDriver driver;
-        JavascriptExecutor js;
-        Actions action;
-        seleniumFuc fuc ;
-        GetJsonString getFirstPageEles;
-        GetJsonString getConfigEles;
-        FirstPageCases FirstPage ;
+    private WebDriver driver;
+    private JavascriptExecutor js;
+    private Actions action;
+    seleniumFuc fuc ;
+    GetJsonString getFirstPageEles;
+    GetJsonString getConfigEles;
+    FirstPageCases FirstPage ;
 
 
         //初始化页面操作要素和配置文件,以LinkedHashMap呈现Json文件中的key和value
@@ -78,7 +77,6 @@ public class runCases {
             this.FirstPage = new FirstPageCases(this.fuc);
 
         }
-
 
         @Test
         public void openpage() {
@@ -141,14 +139,14 @@ public class runCases {
 
             return new DataProviderCase().getDataProvider2(Band_Map);
         }
+    public static void main(String[] args) {
 
-        public static void main(String[] args) {
-            System.out.println(userdir);
-            TestNG tng = new TestNG();
-            List<String> suites = Lists.newArrayList();
-            //添加要执行的testng.xml文件
-            suites.add(userdir+"/tNG_Xml/testNg.xml");
-            tng.setTestSuites(suites);
-            tng.run();
-        }
+        TestNG tng = new TestNG();
+        List<String> suites = Lists.newArrayList();
+        //添加要执行的testng.xml文件
+        suites.add(userdir+"/tNG_Xml/testNg.xml");
+        tng.setTestSuites(suites);
+        tng.run();
+    }
+
 }
