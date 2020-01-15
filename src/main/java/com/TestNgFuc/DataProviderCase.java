@@ -22,7 +22,7 @@ public class DataProviderCase {
         }
         return array;
     }
-    //map中的 value 加入数组
+    //json->map中的 value 加入数组
     public Object [][] getDataProvider1(Map<String, Object> map){
         Object array[][] = new Object[map.size()][1];
         if(map.size()!=0) {
@@ -36,7 +36,7 @@ public class DataProviderCase {
         }
         return array;
     }
-    //map中的key 和 value 加入数组
+    //json->map中的key 和 value 加入数组
     public Object [][] getDataProvider2 (Map<String,Object>map){
 
         Object array[][] = new Object[map.size()][2];

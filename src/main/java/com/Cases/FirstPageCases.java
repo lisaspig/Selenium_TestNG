@@ -40,7 +40,6 @@ public class FirstPageCases {
 
         }
 
-
         public void testself(String  buttonElement,Object test) {
             String Jquerysprit = "$(\"#ui-id-8\").click();";
             String Jquerysprit1 = "$(\"#ui-id-8\").attr(\"class\",\"ui-menu-item-wrapper ui-state-active\");";

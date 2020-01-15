@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="18760" started-at="2019-09-27T09:57:52Z" finished-at="2019-09-27T09:58:11Z">
+    <groups>
+    </groups>
+    <test name="firstpageTest" duration-ms="18760" started-at="2019-09-27T09:57:52Z" finished-at="2019-09-27T09:58:11Z">
+      <class name="com.RunCases.runCases">
+        <test-method status="PASS" signature="Chushihua()[pri:0, instance:com.RunCases.runCases@5ce81285]" name="Chushihua" is-config="true" duration-ms="6180" started-at="2019-09-27T09:57:52Z" finished-at="2019-09-27T09:57:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Chushihua -->
+        <test-method status="PASS" signature="getMap()[pri:0, instance:com.RunCases.runCases@5ce81285]" name="getMap" is-config="true" duration-ms="111" started-at="2019-09-27T09:57:59Z" finished-at="2019-09-27T09:57:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMap -->
+        <test-method status="PASS" signature="openpage()[pri:0, instance:com.RunCases.runCases@5ce81285]" name="openpage" duration-ms="5314" started-at="2019-09-27T09:57:59Z" finished-at="2019-09-27T09:58:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openpage -->
+        <test-method status="PASS" signature="endtest()[pri:0, instance:com.RunCases.runCases@5ce81285]" name="endtest" is-config="true" duration-ms="7118" started-at="2019-09-27T09:58:04Z" finished-at="2019-09-27T09:58:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endtest -->
+      </class> <!-- com.RunCases.runCases -->
+    </test> <!-- firstpageTest -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

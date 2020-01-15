@@ -23,12 +23,9 @@ public class seleniumFuc {
 
         private WebDriver driver;
 
-
-
         public seleniumFuc(WebDriver _driver) {
             this.driver = _driver;
         }
-
         public WebDriver getdriver() {
             return this.driver;
         }
@@ -144,26 +141,28 @@ public class seleniumFuc {
 
         //获取动态元素ID
         public String DongTaiID(String xpath){
+
             return 	this.driver.findElement(By.xpath(xpath)).getAttribute("id");
         }
+
         //获取页面句柄，转换页面
         public WebDriver Switchh( WebDriver _driver){
             String handle = _driver.getWindowHandle();
             return _driver.switchTo().window(handle);
         }
-
+        //获取新页面driver
         public WebDriver SwitchNewWindow(){
             String handle = this.driver.getWindowHandle();
-            WebDriver ndriver=null;
+            WebDriver newdriver=null;
             Set<String> handles=this.driver.getWindowHandles();
             Iterator<String> it = handles.iterator();
             while(it.hasNext()){
                 if(handle.equals(it.next()) ){
                     continue;
                 }
-                ndriver=this.driver.switchTo().window(it.next());
+                newdriver=this.driver.switchTo().window(it.next());
             }
-            return  ndriver;
+            return  newdriver;
         }
 
 
@@ -177,7 +176,7 @@ public class seleniumFuc {
         public void Jsclikcxpath(String Xpath){
             JavascriptExecutor js =(JavascriptExecutor)this.driver;
             WebElement web =this.driver.findElement(By.xpath(Xpath));
-            js.executeScript("arguments[0].focus();", web);
+            js.executeScript("arguments[0].focus();", web);//获取元素焦点
             js.executeScript("arguments[0].click();", web);	//web元素执行点击操作
         }
 
@@ -192,13 +191,14 @@ public class seleniumFuc {
             String s1 ="document.getElementById('"+Id+"').value=''"+value;
             js.executeScript(s1);
         }
+        //使用JQuery进行元素定位
         public void JsSelectid(String Id){
 
             JavascriptExecutor js =(JavascriptExecutor)driver;
             String s1 ="document.querySelector('#"+Id+"')";
             js.executeScript(s1);
         }
-
+        //selenium 执行JS代码通用方法
         public void JsExcute(String Javascript){
             JavascriptExecutor js =(JavascriptExecutor)driver;
             js.executeScript(Javascript);
@@ -209,7 +209,7 @@ public class seleniumFuc {
             js.executeScript(Javascript,web);
         }
 
-        //通过xpath选元素
+        //通过下拉列表选择
         public void selectElementbytext_xpath (String text,String xpath){
             Select sel = new Select(this.driver.findElement(By.xpath(xpath)));
             sel.selectByVisibleText(text);//根据文本选择
