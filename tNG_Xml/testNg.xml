@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" thread-count="3">
     <listeners>
         <listener class-name = "com.TestNgFuc.ReportListenerCase"/>
+        <listener class-name="com.Listener.RetryListener"/>
+        <listener class-name="com.Listener.ScreenListener"/>
     </listeners>
+    <parameter name="isremot" value="true"/>
     <test verbose="2" preserve-order="true" name="firstpageTest">
+        <parameter name="" value=""/>
+        <parameter name="" value=""/>
+        <parameter name="" value=""/>
         <classes>
-            <class name="com.RunCases.runCases"/>
+            <class name="com.RunCases.runtest"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="firstpageTest1">
+        <classes>
+            <class name="com.RunCases.runtest"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="firstpageTest2">
+        <classes>
+            <class name="com.RunCases.runtest"/>
         </classes>
     </test>
 </suite>

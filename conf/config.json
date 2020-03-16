@@ -1,0 +1,11 @@
+{
+	"reportpath" :"/report ",
+	"dirverpath":"/Webdriver",
+	"logpath":"/logs",
+	"imagepath": "/images",
+	"drivertype": "chrome",
+	"platform": "linux",
+	"remotUrl": ["http://10.1.1.107:5555/wd/hub","http://10.1.1.108:5555/wd/hub"],
+	"remote": true,
+	"retrycont":3
+}

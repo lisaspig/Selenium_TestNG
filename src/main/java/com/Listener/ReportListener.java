@@ -1,37 +1,21 @@
-package com.TestNgFuc;
-
-
-import org.testng.IReporter;
-import java.io.File;
-
-import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-
-
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.xml.XmlSuite;
+package com.Listener;
 
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.ResourceCDN;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.ResourceCDN;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.testng.*;
+import org.testng.xml.XmlSuite;
+
+import java.io.File;
+import java.util.*;
 
 
-public class ReportListenerCase implements IReporter {
+public class ReportListener implements IReporter {
 //    static SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //    static String dataNow=format.format(new Date());
 //    static SimpleDateFormat format1=new SimpleDateFormat("yyyyMMddHHmmss");

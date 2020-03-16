@@ -52,4 +52,8 @@ public class DataProviderCase {
         }
         return array;
     }
+
+    public Object[][] getJsonprovider(Object obj[][]){
+        return obj;
+    }
 }
