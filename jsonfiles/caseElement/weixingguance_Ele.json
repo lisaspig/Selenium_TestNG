@@ -1,0 +1,13 @@
+{
+  "url": "Jsonfiles",
+  "菜单":{
+    "菜单": {"type": "1","value": "1","timeout": "1","desc": "1"},
+    "卫星观测": {"type": "2","value": "2","timeout": "2","desc": "2"}
+  },
+  "卫星观测":{
+    "卫星": {"type": "","value": "","timeout": "","desc": ""},
+    "坐标系": {"type": "","value": "","timeout": "","desc": ""},
+    "观测区_中国区":{"type": "","value": "","timeout": "","desc": ""},
+    "观测区_全圆盘":{"type": "","value": "","timeout": "","desc": ""}
+  }
+}

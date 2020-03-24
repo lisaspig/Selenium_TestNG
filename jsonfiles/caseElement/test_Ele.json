@@ -1,0 +1,7 @@
+{
+  "url": "http://www.baidu.com",
+  "百度":{
+    "检索框": {"type": "id","value": "kw","timeout": "2","desc": "检索输入框"},
+    "百度一下": {"type": "id","value": "su","timeout": "2","desc": "百度一下按钮"}
+  }
+}

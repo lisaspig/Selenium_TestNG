@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" thread-count="3">
+<suite name="All Test Suite" thread-count="2" parallel="tests">
+
+    <test verbose="2" preserve-order="true" name="firefoxTest" >
+        <parameter name="browser" value="firefox"/>
+        <parameter name="remoturl" value="http://10.1.1.117:5555/wd/hub"/>
+        <parameter name="platform" value="linux"/>
+        <classes>
+            <class name="com.htht.Cases.ConfigBase"/>
+            <class name="com.htht.Cases.DriverBase"/>
+            <class name="com.htht.RunCases.test1"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="chromeTest" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="remoturl" value="http://10.1.1.117:5555/wd/hub"/>
+        <parameter name="platform" value="linux"/>
+     <classes>
+         <class name="com.htht.Cases.ConfigBase"/>
+         <!--class name="com.htht.Cases.DriverBase"/-->
+         <class name="com.htht.RunCases.test2"/>
+     </classes>
+    </test>
     <listeners>
-        <listener class-name = "com.TestNgFuc.ReportListenerCase"/>
-        <listener class-name="com.Listener.RetryListener"/>
-        <listener class-name="com.Listener.ScreenListener"/>
+        <listener class-name="com.htht.Listener.ReportListener"/>
+        <listener class-name="com.htht.Listener.RetryListener"/>
+        <listener class-name="com.htht.Listener.ScreenListener"/>
     </listeners>
-    <parameter name="isremot" value="true"/>
-    <test verbose="2" preserve-order="true" name="firstpageTest">
-        <parameter name="" value=""/>
-        <parameter name="" value=""/>
-        <parameter name="" value=""/>
-        <classes>
-            <class name="com.RunCases.runtest"/>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true" name="firstpageTest1">
-        <classes>
-            <class name="com.RunCases.runtest"/>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true" name="firstpageTest2">
-        <classes>
-            <class name="com.RunCases.runtest"/>
-        </classes>
-    </test>
 </suite>
