@@ -8,6 +8,9 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.htht.Fileutil.PropertiesInit;
+import com.htht.General.FileCheck;
+import com.htht.General.TimeFormat;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 
@@ -19,10 +22,10 @@ import java.util.*;
 public class ReportListener implements IReporter {
 //    static SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //    static String dataNow=format.format(new Date());
-    static SimpleDateFormat format=new SimpleDateFormat("yyyyMMdd");
-    static String DATE=format.format(new Date());
+    static String DAYDATE= TimeFormat.getTimeStr("yyyyMMdd");
+    static String SECENDDATE=TimeFormat.getTimeStr("HHmmss");
     private static final String OUTPUT_FILDER = "report/";
-    private static final String FILE_NAME = "SwapTestReport.html";
+    private static final String FILE_NAME = "TestReport";
     private ExtentReports extent;
     @Override
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
@@ -107,11 +110,9 @@ public class ReportListener implements IReporter {
 
     private void init() {
         //文件夹不存在的话进行创建
-        File reportDir= new File(OUTPUT_FILDER + DATE);
-        if(!reportDir.exists()&& !reportDir .isDirectory()){
-            reportDir.mkdir();
-        }
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FILDER + DATE +"/"+FILE_NAME);
+        FileCheck.creatFile(OUTPUT_FILDER + DAYDATE);
+        String filepath = OUTPUT_FILDER + DAYDATE +"/"+FILE_NAME+SECENDDATE+".html";
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(filepath);
         // 设置静态文件的DNS
         //怎么样解决cdn.rawgit.com访问不了的情况
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);

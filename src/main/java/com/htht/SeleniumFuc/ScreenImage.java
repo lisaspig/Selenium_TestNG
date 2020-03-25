@@ -1,6 +1,8 @@
 package com.htht.SeleniumFuc;
 
 import com.htht.Fileutil.PropertiesInit;
+import com.htht.General.FileCheck;
+import com.htht.General.TimeFormat;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,12 +29,8 @@ public class ScreenImage {
         if (this.driver!=null) {
             String imagepath = PropertiesInit.getImagepath();
             System.out.println("path+++++++++++++++++++++++"+imagepath);
-            File file = new File(imagepath);
-            if (!file.exists()||!file.isDirectory()) {
-                file.mkdir();
-            }
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm");//设置时间格式
-            String Datatime = df.format(new Date());//获取当前时间
+            FileCheck.creatFile(imagepath);
+            String Datatime = TimeFormat.getTimeStr( "yyyy-MM-dd-HH-mm");
             File ssfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(ssfile, new File(imagepath +"/"+ filename + Datatime + ".png"));
         }else {

@@ -13,7 +13,6 @@ public class ScreenListener extends TestListenerAdapter {
     @Override
     public void onTestSuccess(ITestResult result) {
         super.onTestSuccess(result);
-        takeScreenShot(result);
     }
 
     @Override
@@ -27,7 +26,7 @@ public class ScreenListener extends TestListenerAdapter {
         ScreenImage screenImage = new ScreenImage();
         screenImage.setDriver(driver);
         try {
-           screenImage.screen(result.getName());
+           screenImage.screen(result.getTestName());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
