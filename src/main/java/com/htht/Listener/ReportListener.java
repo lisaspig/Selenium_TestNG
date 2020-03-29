@@ -8,14 +8,11 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.htht.Fileutil.PropertiesInit;
 import com.htht.General.FileCheck;
 import com.htht.General.TimeFormat;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -110,7 +107,7 @@ public class ReportListener implements IReporter {
 
     private void init() {
         //文件夹不存在的话进行创建
-        FileCheck.creatFile(OUTPUT_FILDER + DAYDATE);
+        FileCheck.makeDir(OUTPUT_FILDER + DAYDATE);
         String filepath = OUTPUT_FILDER + DAYDATE +"/"+FILE_NAME+SECENDDATE+".html";
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(filepath);
         // 设置静态文件的DNS

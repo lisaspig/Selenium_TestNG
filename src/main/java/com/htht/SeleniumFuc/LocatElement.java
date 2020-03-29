@@ -12,19 +12,19 @@ import java.util.Set;
 public class LocatElement {
 
         private WebDriver driver;
-        private HashMap<String, HashMap<String, String>> ml;
+        private HashMap<String, HashMap<String, String>> hashMap;
 
-        public LocatElement(WebDriver driver, HashMap<String, HashMap<String, String>> ml) {
+        public LocatElement(WebDriver driver, HashMap<String, HashMap<String, String>> hashMap) {
             this.driver = driver;
-            this.ml=ml;
+            this.hashMap=hashMap;
         }
 
 
         public void setLocatorVariableValue(String variable, String value){
-            Set<String> keys = ml.keySet();
+            Set<String> keys = hashMap.keySet();
             for(String key:keys){
-                String v = ml.get(key).get("value").replaceAll("%"+variable+"%", value);
-                ml.get(key).put("value",v);
+                String v = hashMap.get(key).get("value").replaceAll("%"+variable+"%", value);
+                hashMap.get(key).put("value",v);
             }
         }
 
@@ -108,8 +108,8 @@ public class LocatElement {
 
         private WebElement getLocator(String key, String[] replace, boolean wait) {
             WebElement element = null;
-            if (ml.containsKey(key)) {
-                HashMap<String, String> m = ml.get(key);
+            if (hashMap.containsKey(key)) {
+                HashMap<String, String> m = hashMap.get(key);
                 String type = m.get("type");
                 String value = m.get("value");
                 String timeout =m.get("timeout");

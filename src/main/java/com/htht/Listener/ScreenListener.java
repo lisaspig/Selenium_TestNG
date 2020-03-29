@@ -26,7 +26,7 @@ public class ScreenListener extends TestListenerAdapter {
         ScreenImage screenImage = new ScreenImage();
         screenImage.setDriver(driver);
         try {
-           screenImage.screen(result.getTestName());
+           screenImage.screen(result.getName());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

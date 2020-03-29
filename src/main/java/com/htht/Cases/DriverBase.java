@@ -2,11 +2,23 @@ package com.htht.Cases;
 
 import com.htht.Fileutil.PropertiesInit;
 import com.htht.SeleniumFuc.DriverInstance;
+import com.htht.SeleniumFuc.SeleniumAction;
+import com.htht.TestAsert.SeleniumException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import org.testng.annotations.*;
+
+import java.util.concurrent.TimeUnit;
 
 public class DriverBase {
     private WebDriver driver;
+
+    public WebDriver getDriver() {
+        return this.driver;
+    }
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
+    }
 
     @BeforeClass
     @Parameters({"remoturl","platform","browser"})
@@ -15,29 +27,16 @@ public class DriverBase {
         System.out.println("platform="+platform);
         System.out.println("browser="+browser);
         String isremot = PropertiesInit.getIsremot();
+        remoturl = PropertiesInit.getRemothub()+"/wd/hub";
         if (isremot.equals("true")&&isremot!=null){
             this.driver=DriverInstance.getInstance().getRemotDriver(remoturl,platform,browser);
         }else if(isremot.equals("false")||isremot==null){
             String driverpath =PropertiesInit.getDirverpath();
             this.driver=DriverInstance.getInstance().getLocalDriver(browser,driverpath);
         }
-//        ctx.setAttribute("webDriver",this.driver);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-//    @BeforeTest()
-//    private void counText(ITestContext ctx){
-//        ctx.setAttribute("webdriver",this.driver);
-//    }
 
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
-    }
-//    @Test()
-    public WebDriver getDriver() {
-//      ctx.setAttribute("webDriver",this.driver);
-        System.out.println("huo qu driver");
-        System.out.println(this.driver);
-        return this.driver;
-    }
     @AfterClass
     public void tearDownTest(){
         System.out.println("测试完成");

@@ -8,6 +8,15 @@ public class PropertiesInit {
     private static String imagepath;
     private static String isremot;
     private static String retrycont;
+    private static String remothub;
+
+    public static String getRemothub() {
+        return remothub;
+    }
+
+    public static void setRemothub(String remothub) {
+        PropertiesInit.remothub = remothub;
+    }
 
     public static String getReportpath() {
         return reportpath;

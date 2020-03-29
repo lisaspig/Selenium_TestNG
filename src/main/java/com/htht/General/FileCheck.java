@@ -8,7 +8,7 @@ public class FileCheck {
     public static void makeDir(String dirPath){
         File file = new File(dirPath);
         if(!file.exists()||!file.isDirectory()){
-            file.mkdir();
+            file.mkdirs();
         }
     }
 

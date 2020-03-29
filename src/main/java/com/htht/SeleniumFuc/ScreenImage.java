@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenImage {
-
 
     private  WebDriver driver;
 
@@ -27,12 +27,14 @@ public class ScreenImage {
 
     public void screen(String filename)throws IOException, InterruptedException {
         if (this.driver!=null) {
-            String imagepath = PropertiesInit.getImagepath();
-            System.out.println("path+++++++++++++++++++++++"+imagepath);
-            FileCheck.creatFile(imagepath);
-            String Datatime = TimeFormat.getTimeStr( "yyyy-MM-dd-HH-mm");
+            String DayData =TimeFormat.getTimeStr("yyyyMMdd");
+            String SecondData =TimeFormat.getTimeStr("HHmmss");
+            String imagepath = PropertiesInit.getImagepath()+"/"+DayData;
+            FileCheck.makeDir(imagepath);
             File ssfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(ssfile, new File(imagepath +"/"+ filename + Datatime + ".png"));
+            File resultfile = new File(imagepath +"/"+ filename + SecondData + ".png");
+            FileUtils.copyFile(ssfile,resultfile);
+            Reporter.log("失败截图:"+"<a href="+resultfile.getCanonicalFile()+"><image src="+resultfile.getCanonicalFile()+"></a>");
         }else {
             System.out.println("driver=null");
         }
