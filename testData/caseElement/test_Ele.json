@@ -1,0 +1,8 @@
+{
+  "url": "http://10.1.100.54/zentao/user-login-L3plbnRhby8=.html",
+  "登录":{
+    "用户名":{"type": "id","value": "account","timeout": "2","desc": "输入用户名"},
+    "密码":{"type": "linktext","value": "密码","timeout": "2","desc": "输入用密码"},
+    "登录":{"type": "id","value": "submit","timeout": "2","desc": "点击登录"}
+  }
+}

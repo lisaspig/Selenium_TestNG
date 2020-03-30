@@ -30,7 +30,7 @@ public class GetProperties extends PropertiesInit{
             PropertiesInit.setImagepath(pro.getProperty("imagepath"));
             PropertiesInit.setIsremot(pro.getProperty("isremot"));
             PropertiesInit.setRetrycont(pro.getProperty("retrycont"));
-            PropertiesInit.setRetrycont(pro.getProperty("remothub")+"/wd/hub");
+            PropertiesInit.setRemothub(pro.getProperty("remothub")+"/wd/hub");
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e){

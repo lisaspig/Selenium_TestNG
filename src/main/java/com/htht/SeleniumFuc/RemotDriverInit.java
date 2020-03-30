@@ -2,6 +2,7 @@ package com.htht.SeleniumFuc;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -60,6 +61,7 @@ public class RemotDriverInit {
                 e.printStackTrace();
             }
             DesiredCapabilities capabilities;
+
             if (browser.equals("firefox")) {
                 capabilities = DesiredCapabilities.firefox();
                 capabilities.setBrowserName("firefox");
@@ -89,4 +91,36 @@ public class RemotDriverInit {
         return driver;
     }
 
+
+//    private WebDriver chromeDriver(String platform ,URL url){
+//        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//        capabilities = DesiredCapabilities.chrome();
+//        capabilities.setBrowserName("chrome");
+//        this.chosePlatform(capabilities,platform);
+//        capabilities.setJavascriptEnabled(true);
+//        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("start-maximized");
+//        options.addArguments("disable-infobars");
+//        options.addArguments("--disable-extensions");
+//        options.addArguments("--disable-gpu");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--no-sandbox");
+//
+//        WebDriver driver = new RemoteWebDriver(url, capabilities);
+//        return driver;
+//    }
+//
+//
+//    private void chosePlatform(DesiredCapabilities capabilities,String platform){
+//        if (platform.equals("windows")) {
+//            capabilities.setPlatform(Platform.WINDOWS);
+//        } else if (platform.equals("win10")) {
+//            capabilities.setPlatform(Platform.WIN10);
+//        } else if (platform.equals("linux")) {
+//            capabilities.setPlatform(Platform.LINUX);
+//        } else{
+//            capabilities.setPlatform(Platform.ANY);
+//        }
+//    }
 }

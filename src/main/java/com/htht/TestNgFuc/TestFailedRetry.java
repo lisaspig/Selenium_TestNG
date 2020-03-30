@@ -6,13 +6,15 @@ import org.testng.ITestResult;
 
 
 public class TestFailedRetry implements IRetryAnalyzer {
-    private static String retrycont = PropertiesInit.getRetrycont();
-    private int count = 1;
+
+
     @Override
     public boolean retry(ITestResult result){
-//       String maxRetryCount = PropertiesInit.getRetrycont();
+        int count = 1;
+        String retrycont = PropertiesInit.getRetrycont();
+//      String maxRetryCount = PropertiesInit.getRetrycont();
         int max;
-        System.out.println("test+++++++++++++++++++++++++++"+retrycont);
+        System.out.println("retrycont+++++++++++++++++++++++++++"+retrycont);
         if(retrycont==null) {
             max = 2;
         }else{

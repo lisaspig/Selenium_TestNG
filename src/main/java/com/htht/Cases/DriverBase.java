@@ -5,6 +5,7 @@ import com.htht.SeleniumFuc.DriverInstance;
 import com.htht.SeleniumFuc.SeleniumAction;
 import com.htht.TestAsert.SeleniumException;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
@@ -23,11 +24,8 @@ public class DriverBase {
     @BeforeClass
     @Parameters({"remoturl","platform","browser"})
     public void creatDriver(String remoturl,String platform,String browser) {
-        System.out.println("remoturl="+remoturl);
-        System.out.println("platform="+platform);
-        System.out.println("browser="+browser);
         String isremot = PropertiesInit.getIsremot();
-        remoturl = PropertiesInit.getRemothub()+"/wd/hub";
+//        remoturl = PropertiesInit.getRemothub()+"/wd/hub";
         if (isremot.equals("true")&&isremot!=null){
             this.driver=DriverInstance.getInstance().getRemotDriver(remoturl,platform,browser);
         }else if(isremot.equals("false")||isremot==null){
@@ -38,8 +36,8 @@ public class DriverBase {
     }
 
     @AfterClass
-    public void tearDownTest(){
-        System.out.println("测试完成");
+    public void tearDownTest(ITestResult rt){
+        System.out.println(rt.getTestName()+"测试执行完成");
         this.driver.quit();
     }
 

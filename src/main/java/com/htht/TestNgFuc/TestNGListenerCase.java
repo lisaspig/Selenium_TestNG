@@ -21,16 +21,13 @@ import org.testng.*;
         //测试错误后执行
         public void	onTestFailure(ITestResult result) {
 
-
         }
         //测试跳过后执行
         public void onTestSkipped(ITestResult result) {
 
-
         }
         //测试成功后执行
         public void onTestSuccess(ITestResult result) {
-
 
         }
 }

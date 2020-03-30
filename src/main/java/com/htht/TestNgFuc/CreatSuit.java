@@ -8,6 +8,9 @@ import java.util.List;
 
 public class CreatSuit {
 
+    private String suitname;
+
+
     public void testsuit(XmlTest xmlTest, List<String> lisener,String parallel){
         XmlSuite xmlSuite = new XmlSuite();
         xmlSuite.setListeners(lisener);
