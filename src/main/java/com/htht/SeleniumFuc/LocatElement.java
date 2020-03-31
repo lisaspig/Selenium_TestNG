@@ -113,6 +113,7 @@ public class LocatElement {
                 String type = m.get("type");
                 String value = m.get("value");
                 String timeout =m.get("timeout");
+                System.out.println(type+value+timeout);
                 if (replace != null) {
                     value = this.getLocatorString(value, replace);
                 }

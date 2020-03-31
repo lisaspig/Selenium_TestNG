@@ -7,11 +7,10 @@ import org.testng.ITestResult;
 
 public class TestFailedRetry implements IRetryAnalyzer {
 
-
+    private static int count = 1;
+    private static String retrycont = PropertiesInit.getRetrycont();
     @Override
     public boolean retry(ITestResult result){
-        int count = 1;
-        String retrycont = PropertiesInit.getRetrycont();
 //      String maxRetryCount = PropertiesInit.getRetrycont();
         int max;
         System.out.println("retrycont+++++++++++++++++++++++++++"+retrycont);

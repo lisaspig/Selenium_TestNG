@@ -1,6 +1,7 @@
 
 package com.htht.SeleniumFuc;
 
+import com.htht.CasesBase.AssertBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -202,37 +203,30 @@ public class SeleniumAction {
             action.sendKeys(element,keys).perform();
             action.release();
         }
-//        弹出框点击操作
-        public static String alertConfrim(String action,String timeout,WebDriver driver ){
 
-            try {
-                Alert alert = new WebDriverWait(driver,Integer.valueOf(timeout)).until(ExpectedConditions.alertIsPresent());
-                    if (action.equals("关闭") || action.equals("取消")) {
-                        alert.dismiss();
-                    } else {
-                        alert.accept();
-                    }
-                    return alert.getText();
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-                    return null;
+
+//       获取弹出框
+        public static Alert swichAlter(String timeout,WebDriver driver){
+            Alert alert = new WebDriverWait(driver,Integer.valueOf(timeout)).until(ExpectedConditions.alertIsPresent());
+            return alert;
+        }
+//       弹出框操作
+        public static void clickAlert(String action,Alert alert ){
+            if (action.equals("关闭") || action.equals("取消")) {
+                alert.dismiss();
+            } else {
+                alert.accept();
             }
         }
-    //  弹出框输入操作
-        public static String prompt(String keys,WebDriver driver ){
-            Alert alert = null;
-            try {
-                alert = driver.switchTo().alert();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if(alert!=null) {
+    //  可输入弹出框操作
+        public static void clickAlter(String keys,String action,Alert alert){
+            if (action.equals("关闭") || action.equals("取消")) {
+                alert.dismiss();
+            } else {
                 alert.sendKeys(keys);
                 alert.accept();
-                return alert.getText();
-            }else{
-                return  null;
             }
+
         }
 
 }

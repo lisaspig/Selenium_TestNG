@@ -17,7 +17,7 @@ public class CreateXmlTest {
         xmlTest.setParallel("test");
         XmlClass xmlClass = new XmlClass();
         XmlMethodSelector xmlMethodSelector = new XmlMethodSelector();
-        xmlMethodSelector.setClassName("com.htht.Cases.ITestCase");
+        xmlMethodSelector.setClassName("com.htht.CasesBase.ITestCase");
         List<String> incloudmethod = new ArrayList<>();
         incloudmethod.add("");
     }

@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" thread-count="2" parallel="tests" allow-return-values="true">
-
-    <test verbose="2" preserve-order="true" name="firefoxTest" >
-        <parameter name="browser" value="firefox"/>
-        <parameter name="remoturl" value="http://192.168.199.241:5555/wd/hub"/>
-        <parameter name="platform" value="linux"/>
+<suite name="All Test Suite" thread-count="3" parallel="tests" allow-return-values="true">
+    <test name="setup" parallel="tests">
         <classes>
-            <class name="com.htht.Cases.ConfigBase"/>
-            <class name="com.htht.Cases.DriverBase"/>
-            <class name="com.htht.RunCases.test1"/>
+            <class name="com.htht.CasesBase.ConfigBase"/>
         </classes>
     </test>
+    <!--test verbose="2" preserve-order="true" name="firefoxTest" >
+        <parameter name="browser" value="firefox"/>
+        <parameter name="remoturl" value="http://10.1.1.107:5555/wd/hub"/>
+        <parameter name="platform" value="linux"/>
+        <classes>
+            <class name="com.htht.CasesBase.DriverBase"/>
+            <class name="com.htht.RunCases.test1"/>
+        </classes>
+    </test-->
     <test verbose="2" preserve-order="true" name="chromeTest" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="remoturl" value="http://192.168.199.241:5555/wd/hub"/>
+        <parameter name="remoturl" value="http://10.1.1.107:5555/wd/hub"/>
         <parameter name="platform" value="linux"/>
      <classes>
-         <class name="com.htht.Cases.ConfigBase"/>
-         <class name="com.htht.Cases.DriverBase"/>
-         <class name="com.htht.RunCases.test2"/>
+         <class name="com.htht.CasesBase.DriverBase"/>
+         <!--class name="com.htht.RunCases.test2"/-->
+         <class name="com.htht.TestCase.Login"/>
      </classes>
     </test>
     <listeners>

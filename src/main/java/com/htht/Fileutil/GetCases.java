@@ -31,18 +31,22 @@ public class GetCases {
         Object result [][] =null;
         try {
             JSONArray jarray = object.getJSONArray(keyWord);
-            result = new Object[jarray.size()][jarray.getJSONObject(0).size()];
-            for(int i=0;i<jarray.size();i++){
-                JSONObject obj = jarray.getJSONObject(i);
-                int j =0;
-                for(String key :obj.keySet()){
-                    result[i][j]=obj.get(key).toString();
-                    System.out.println( result[i][j]);
-                    j++;
+            if (!jarray.equals(null)){
+                result = new Object[jarray.size()][jarray.getJSONObject(0).size()];
+                for(int i=0;i<jarray.size();i++){
+                    JSONObject obj = jarray.getJSONObject(i);
+                    int j =0;
+                    for(String key :obj.keySet()){
+                        result[i][j]=obj.get(key).toString();
+                        System.out.println( result[i][j]);
+                        j++;
+                    }
                 }
+            }else {
+               result=null;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            result=null;
         }
         return result;
     }

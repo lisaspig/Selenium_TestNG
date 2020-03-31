@@ -1,11 +1,10 @@
 package com.htht.RunCases;
 
-import com.htht.Cases.DriverBase;
+import com.htht.CasesBase.DriverBase;
 import com.htht.SeleniumFuc.SeleniumAction;
-import com.htht.TestAsert.SeleniumException;
+import com.htht.CasesBase.AssertBase;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class test1 extends DriverBase {
@@ -19,7 +18,7 @@ public class test1 extends DriverBase {
     @Test(testName = "test1",groups = "test1",dependsOnMethods = "setup")
     public void myTest1(){
         System.out.println("test1.driver="+this.driver);
-        SeleniumAction.openPage(this.driver,"http://10.1.1.78:8080/");
-        Assert.assertEquals(SeleniumException.titleContains("百度一下1","3",this.driver),true);
+        SeleniumAction.openPage(this.driver,"http://10.1.1.107:5555/grid/console");
+        Assert.assertEquals(AssertBase.titleContains("百度一下1","3",this.driver),true);
     }
 }

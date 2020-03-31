@@ -12,7 +12,8 @@ public class ReadInstance {
     public static ReadInstance getInstance() {
         return READSINGLETON;
     }
-    public  String getjsonfile(String filepath) {
+    public String getjsonfile(String filepath) {
+        System.out.println(filepath);
         String fileread =null;
         try {
             fileread = FileUtils.readFileToString(new File(filepath),"UTF-8");
