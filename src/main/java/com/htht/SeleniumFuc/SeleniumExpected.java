@@ -1,4 +1,4 @@
-package com.htht.CasesBase;
+package com.htht.SeleniumFuc;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AssertBase {
+public class SeleniumExpected {
 
     //判断当前页面的title是否精确等于预期
     public static boolean titleIs(String titles,String timeout,WebDriver driver){
