@@ -39,15 +39,4 @@ public class PaserJarray  {
             return result;
     }
 
-
-
-//    public static void main(String[] args) {
-//        String readstr = ReadInstance.getInstance().getjsonfile("jsonfiles/caseData/weixingguance_Dat.json");
-//        String readstr2 = ReadInstance.getInstance().getjsonfile("jsonfiles/caseElement/weixingguance_Ele.json");
-//        JSONObject object = PaserJsonfile.getJobject(readstr);
-//        JSONObject object2 =PaserJsonfile.getJobject(readstr2);
-//        PaserJarray.getData(object,"卫星观测_caseData");
-//        GetCases.getEle(object2,"卫星观测");
-//    }
-
 }

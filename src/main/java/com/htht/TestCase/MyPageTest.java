@@ -41,15 +41,19 @@ public class MyPageTest extends DriverBase implements ITestCase {
         this.dataobject= PaserJsonfile.getJobject("testData/caseData/test_Dat.json");
 
     }
-    @Test(testName = "gomore",dataProvider = "login_my",description = "查看更多动态信息")
-    public void runTest(String username,String password ,String asserttext,String action){
-         new LoginBase(driver).login(username, password,asserttext,action);
-        SeleniumAction.clickElment(logElment.getElement("更多动态"));
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//    @Test(testName = "gomore",dataProvider = "login_my",description = "查看更多动态信息")
+//    public void runTest(String username,String password ,String asserttext,String action){
+//         new LoginBase(driver).login(username, password,asserttext,action);
+//        SeleniumAction.clickElment(logElment.getElement("更多动态"));
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+    @Test(testName = "testmy")
+    public void mytest(){
+        driver.get("http://www.baidu.com");
     }
 
     @DataProvider(name = "login_my")

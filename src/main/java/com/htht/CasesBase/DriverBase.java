@@ -33,6 +33,7 @@ public class DriverBase {
             this.driver=DriverInstance.getInstance().getLocalDriver(browser,driverpath);
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     @AfterClass

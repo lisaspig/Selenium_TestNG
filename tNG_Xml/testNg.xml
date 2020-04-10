@@ -17,12 +17,11 @@
     </test-->
     <test verbose="2" preserve-order="true" name="chromeTest" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="remoturl" value="http://10.1.1.107:5555/wd/hub"/>
-        <parameter name="platform" value="linux"/>
      <classes>
          <class name="com.htht.CasesBase.DriverBase"/>
          <!--class name="com.htht.RunCases.test2"/-->
-         <class name="com.htht.TestCase.Login"/>
+         <!--<class name="com.htht.TestCase.Login"/>-->
+         <class name="com.htht.TestCase.MyPageTest"/>
      </classes>
     </test>
     <listeners>

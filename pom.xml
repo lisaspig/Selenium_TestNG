@@ -16,9 +16,9 @@
             <version>1.48</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -154,6 +154,7 @@
                                             <exclude>target/</exclude>
                                             <exclude>*.iml</exclude>
                                             <exclude>.idea/</exclude>
+                                            <exclude>src/main/java/META-INF/</exclude>
                                         </excludes>
                                     </resource>
                                 </resources>
@@ -172,7 +173,7 @@
                             <manifest>
                                 <addClasspath>true</addClasspath>
                                 <classpathPrefix>lib/</classpathPrefix>
-                                <mainClass>com.RunCases.runCases</mainClass>
+                                <mainClass>com.htht.RunCases.runtest</mainClass>
                                 <packageName>Selenium_test</packageName>
                             </manifest>
                         </archive>

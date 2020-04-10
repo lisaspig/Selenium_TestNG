@@ -22,7 +22,7 @@ public class ReportListener implements IReporter {
 //    static String dataNow=format.format(new Date());
     static String DAYDATE= TimeFormat.getTimeStr("yyyyMMdd");
     static String SECENDDATE=TimeFormat.getTimeStr("HHmmss");
-    private static final String OUTPUT_FILDER = GetProperties.getProperty("reportpath");
+    private static final String OUTPUT_FILDER = GetProperties.getProperty("reportpath")+"/";
     private static final String FILE_NAME = "TestReport";
     private ExtentReports extent;
     @Override

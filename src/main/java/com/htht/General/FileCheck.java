@@ -22,4 +22,12 @@ public class FileCheck {
             }
         }
     }
+
+    public static boolean isFileExist(String filepath){
+        File file = new File(filepath);
+        if(!file.exists()||!file.isFile()){
+            return false;
+        }
+        return true;
+    }
 }

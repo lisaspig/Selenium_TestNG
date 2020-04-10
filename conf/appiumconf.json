@@ -1,0 +1,10 @@
+{
+  "deviceName": "863064010542381",
+  "automationName": "Appium",
+  "udid": "127.0.0.1:62001",
+  "platformName": "Android",
+  "platformVersion": "5.1.1",
+  "appPackage": "com.lecai",
+  "appActivity": ".module.login.activity.NativeLoginActivity",
+  "app": ""
+}
