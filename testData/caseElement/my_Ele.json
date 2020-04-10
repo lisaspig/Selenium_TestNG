@@ -1,7 +1,0 @@
-{
-  "url": "http://10.1.100.54/zentao/my/",
-  "pageAssert": "我的地盘 - 禅道",
-  "最新动态":{
-    "更多动态":{"type": "xpath","value": ".//div[text()='最新动态']/../nav/li/a[@title='更多']","timeout": "2","desc": "更多动态信息"}
-  }
-}
