@@ -30,7 +30,10 @@ public class GetProperties extends PropertiesInit{
             PropertiesInit.setImagepath(pro.getProperty("imagepath"));
             PropertiesInit.setIsremot(pro.getProperty("isremot"));
             PropertiesInit.setRetrycont(pro.getProperty("retrycont"));
-            PropertiesInit.setRemothub(pro.getProperty("remothub")+"/wd/hub");
+            PropertiesInit.setRemothub(pro.getProperty("remothub"));
+            PropertiesInit.setPlatform(pro.getProperty("platform"));
+            PropertiesInit.setAsserttimeout(pro.getProperty("asserttimeout"));
+            PropertiesInit.setCookiefilepath(pro.getProperty("cookiefilepath"));
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch (IOException e){
@@ -46,15 +49,32 @@ public class GetProperties extends PropertiesInit{
             pro.setProperty("logpath","logs");
             pro.setProperty("dirverpath","webdriver");
             pro.setProperty("imagepath","images");
-            pro.setProperty("isremot","true");
+            pro.setProperty("isremot","false");
             pro.setProperty("retrycont","3");
+            pro.setProperty("asserttimeout","10");
+            pro.setProperty("remothub","");
+            pro.setProperty("platform","");
+            pro.setProperty("cookiefilepath","testData/caseData/cookeis.json");
             pro.store(oFile,"新增属性值");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args) {
-        GetProperties.paserProperties();
-        System.out.println(PropertiesInit.getRetrycont());
+    public static String getProperty(String name){
+        String propertypath = "conf/conf.properties";
+        File file = new File(propertypath);
+        Properties pro = new Properties();
+        InputStream in ;
+        try {
+            in=new BufferedInputStream(new FileInputStream(file));
+            pro.load(in);
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(!file.exists()){
+            setProperty(pro,file,propertypath);
+        }
+        return pro.getProperty(name);
     }
 }

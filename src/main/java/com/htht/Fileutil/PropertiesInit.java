@@ -9,6 +9,33 @@ public class PropertiesInit {
     private static String isremot;
     private static String retrycont;
     private static String remothub;
+    private static String platform;
+    private static String asserttimeout;
+    private static String cookiefilepath;
+
+    public static String getPlatform() {
+        return platform;
+    }
+
+    public static void setPlatform(String platform) {
+        PropertiesInit.platform = platform;
+    }
+
+    public static String getAsserttimeout() {
+        return asserttimeout;
+    }
+
+    public static void setAsserttimeout(String asserttimeout) {
+        PropertiesInit.asserttimeout = asserttimeout;
+    }
+
+    public static String getCookiefilepath() {
+        return cookiefilepath;
+    }
+
+    public static void setCookiefilepath(String cookiefilepath) {
+        PropertiesInit.cookiefilepath = cookiefilepath;
+    }
 
     public static String getRemothub() {
         return remothub;

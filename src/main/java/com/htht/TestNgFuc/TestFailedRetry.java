@@ -1,5 +1,6 @@
 package com.htht.TestNgFuc;
 
+import com.htht.Fileutil.GetProperties;
 import com.htht.Fileutil.PropertiesInit;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
@@ -8,7 +9,7 @@ import org.testng.ITestResult;
 public class TestFailedRetry implements IRetryAnalyzer {
 
     private static int count = 1;
-    private static String retrycont = PropertiesInit.getRetrycont();
+    private static String retrycont = GetProperties.getProperty("retrycont");
     @Override
     public boolean retry(ITestResult result){
 //      String maxRetryCount = PropertiesInit.getRetrycont();
