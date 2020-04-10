@@ -110,7 +110,7 @@ public class SeleniumBase {
                SeleniumAction.outIframe(driver);
            }else if(keyword.equals(KEY_ASSERT)){
                WebElement element =locatElement.getElement(stepname);
-                this.assertKey(parame,hash.get(TIMEOUT),element,driver);
+                this.assertKey(parame,element,driver);
            }
        }
     }
@@ -143,7 +143,7 @@ public class SeleniumBase {
         }else if (keyword.equals(KEY_IFRAME_OUT)){
             SeleniumAction.outIframe(driver);
         }else if(keyword.equals(KEY_ASSERT)){
-            this.assertKey(parame,hash.get(TIMEOUT),locatElement.getElement(stepname),driver);
+            this.assertKey(parame,locatElement.getElement(stepname),driver);
         }
     }
 
@@ -184,13 +184,13 @@ public class SeleniumBase {
         }
     }
 
-    private void assertKey(String parame,String timeout,WebElement element,WebDriver driver) {
+    private void assertKey(String parame,WebElement element,WebDriver driver) {
         if (parame!=null){
             String[] split = parame.split("\\.");
             if(split[0].equals("isTitle")){
-                SeleniumExpected.titleIs(split[1],timeout,driver);
+                SeleniumExpected.titleIs(split[1],driver);
             }else if (split[0].equals("containsTitle")){
-                SeleniumExpected.titleContains(split[1],timeout,driver);
+                SeleniumExpected.titleContains(split[1],driver);
             }
         }
     }

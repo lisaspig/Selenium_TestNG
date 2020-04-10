@@ -18,8 +18,9 @@ public class WriteInstance {
     }
 
     public void fileWrite(String filepath,String str){
-        File file = FileCheck.creatFile(filepath);
-        if(file.exists()){
+        File file = new File(filepath);
+        if(!file.exists()){
+            FileCheck.creatFile(filepath);
         }
         try {
             FileWriter fileWriter = new FileWriter(file);

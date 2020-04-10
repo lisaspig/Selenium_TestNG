@@ -2,7 +2,7 @@ package com.htht.RunCases;
 
 import com.htht.CasesBase.DriverBase;
 import com.htht.SeleniumFuc.SeleniumAction;
-import com.htht.CasesBase.AssertBase;
+import com.htht.SeleniumFuc.SeleniumExpected;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,6 +19,6 @@ public class test1 extends DriverBase {
     public void myTest1(){
         System.out.println("test1.driver="+this.driver);
         SeleniumAction.openPage(this.driver,"http://10.1.1.107:5555/grid/console");
-        Assert.assertEquals(AssertBase.titleContains("百度一下1","3",this.driver),true);
+        Assert.assertEquals(SeleniumExpected.titleContains("百度一下1",this.driver),true);
     }
 }

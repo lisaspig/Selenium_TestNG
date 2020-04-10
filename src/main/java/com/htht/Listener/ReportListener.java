@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.TestAttribute;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.htht.Fileutil.GetProperties;
 import com.htht.General.FileCheck;
 import com.htht.General.TimeFormat;
 import org.testng.*;
@@ -21,7 +22,7 @@ public class ReportListener implements IReporter {
 //    static String dataNow=format.format(new Date());
     static String DAYDATE= TimeFormat.getTimeStr("yyyyMMdd");
     static String SECENDDATE=TimeFormat.getTimeStr("HHmmss");
-    private static final String OUTPUT_FILDER = "report/";
+    private static final String OUTPUT_FILDER = GetProperties.getProperty("reportpath");
     private static final String FILE_NAME = "TestReport";
     private ExtentReports extent;
     @Override
@@ -107,7 +108,7 @@ public class ReportListener implements IReporter {
 
     private void init() {
         //文件夹不存在的话进行创建
-        FileCheck.makeDir(OUTPUT_FILDER + DAYDATE);
+        FileCheck.makeDir(OUTPUT_FILDER +"/"+DAYDATE);
         String filepath = OUTPUT_FILDER + DAYDATE +"/"+FILE_NAME+SECENDDATE+".html";
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(filepath);
         // 设置静态文件的DNS

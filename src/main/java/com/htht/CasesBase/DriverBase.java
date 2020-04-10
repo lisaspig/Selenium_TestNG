@@ -20,11 +20,13 @@ public class DriverBase {
     }
 
     @BeforeClass
-    @Parameters({"remoturl","platform","browser"})
-    public void creatDriver(String remoturl,String platform,String browser) {
+    @Parameters({"browser"})
+    public void creatDriver(String browser) {
         String isremot = PropertiesInit.getIsremot();
 //        remoturl = PropertiesInit.getRemothub()+"/wd/hub";
         if (isremot.equals("true")&&isremot!=null){
+            String remoturl = PropertiesInit.getRemothub()+"/wd/hub";
+            String platform = PropertiesInit.getPlatform();
             this.driver=DriverInstance.getInstance().getRemotDriver(remoturl,platform,browser);
         }else if(isremot.equals("false")||isremot==null){
             String driverpath =PropertiesInit.getDirverpath();

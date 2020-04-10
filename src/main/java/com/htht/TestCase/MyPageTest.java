@@ -43,7 +43,7 @@ public class MyPageTest extends DriverBase implements ITestCase {
     }
     @Test(testName = "gomore",dataProvider = "login_my",description = "查看更多动态信息")
     public void runTest(String username,String password ,String asserttext,String action){
-//         new LoginBase(driver).login(username, password,asserttext,action);
+         new LoginBase(driver).login(username, password,asserttext,action);
         SeleniumAction.clickElment(logElment.getElement("更多动态"));
         try {
             Thread.sleep(5000);
